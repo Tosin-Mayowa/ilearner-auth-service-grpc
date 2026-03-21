@@ -14,7 +14,7 @@ import { validationSchema } from './auth/config/env.validation';
     load: [grpcClientsConfig,jwtConfig],
     validationSchema: validationSchema,
   }), AuthModule],
-  controllers: [AuthController],
+  controllers: [],
   providers: [],
 })
 export class AppModule {}

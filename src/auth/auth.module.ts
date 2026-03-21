@@ -3,6 +3,7 @@ import { AuthService } from './auth.service';
 import { ConfigService } from '@nestjs/config';
 import { ClientsModule, GrpcOptions } from '@nestjs/microservices';
 import { JwtModule } from '@nestjs/jwt';
+import { AuthController } from './auth.controller';
 
 
 @Module({
@@ -29,7 +30,7 @@ import { JwtModule } from '@nestjs/jwt';
         useFactory: (config: ConfigService):GrpcOptions => config.getOrThrow<GrpcOptions>('grpcClients.notificationService'),
       }
     ])],
-
+ controllers: [AuthController],
   providers: [AuthService]
 })
 export class AuthModule {}

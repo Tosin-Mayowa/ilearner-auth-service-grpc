@@ -14,7 +14,7 @@ async function bootstrap() {
       options: {
         package: 'auth',
         protoPath: require.resolve('@myapp/proto-contracts/proto/auth/auth.proto'),
-        url: `0.0.0.0:${process.env.GRPC_PORT || 50051}`,
+        url: `0.0.0.0:${process.env.GRPC_PORT || 7001}`,
         loader: {
           keepCase: true,
           longs: String,

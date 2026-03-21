@@ -37,7 +37,13 @@ export class AuthController {
     return this.authService.refreshToken(request);
   }
 
- @GrpcMethod('AuthService', 'VerifyEmail')
+
+  @GrpcMethod('AuthService', 'Logout')
+  async logout(request: LogoutRequest) {
+    return this.authService.logout(request);
+  }
+  
+   @GrpcMethod('AuthService', 'VerifyEmail')
   async verifyEmail(request: VerifyEmailRequest) {
     return this.authService.verifyEmail(request);
   }
@@ -45,9 +51,5 @@ export class AuthController {
   @GrpcMethod('AuthService', 'ResendVerificationCode')
   async resendVerificationCode(request: ResendVerificationCodeRequest) {
     return this.authService.resendVerificationCode(request);
-  }
-  @GrpcMethod('AuthService', 'Logout')
-  async logout(request: LogoutRequest) {
-    return this.authService.logout(request);
   }
 }
